@@ -1,0 +1,50 @@
+.gridwrapper{
+    border: 1px solid black;
+    width: 55%;
+    aspect-ratio: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 1.5rem black;
+}
+
+.grid{
+    box-sizing: border-box;
+    background: white;
+    height: auto;
+    width: 100%;
+    display: grid;
+    color: black;
+    padding: 7px;
+    gap: 7px;
+}
+
+.grid-item{
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 0.15rem;
+}
+
+.grid-item::before{
+    content: '';
+    width: 12%;
+    height: 70%;
+    background: rgb(255, 255, 255, 0.2);
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    border-radius: 5rem;
+}
+
+.grid-item::after{
+    content: '';
+    width: 50%;
+    height: 12%;
+    background: rgb(255, 255, 255, 0.2);
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    border-radius: 5rem;
+}

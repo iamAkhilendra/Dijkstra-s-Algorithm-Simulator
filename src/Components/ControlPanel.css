@@ -1,0 +1,149 @@
+.maker{
+    height: 3rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    font-size: large;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 0px;
+    position: absolute;
+    bottom: 0.5rem;
+}
+
+#run{
+    background: grey;
+    overflow: hidden;
+}
+
+
+
+
+.leftnavigationbutton,
+.rightnavigationbutton{
+    height: 5rem;
+    aspect-ratio: 1;
+    position: absolute;
+    background: white;
+    top: 9rem;
+    border-radius: 2.5rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.leftnavigationbutton >svg,
+.rightnavigationbutton >svg{
+    height: 8rem;
+    aspect-ratio: 1;
+}
+
+.leftnavigationbutton:hover > svg,
+.rightnavigationbutton:hover > svg{
+    transform: scale(1.2);
+    stroke: blue;
+    cursor: pointer;
+}
+
+.leftnavigationbutton{
+    display: none;
+    left: -2.5rem;
+}
+
+.rightnavigationbutton{
+    right: -2.5rem;
+    rotate: 180deg;
+}
+
+.stepNumber{
+    position: absolute;
+    top: 0.5rem;
+}
+
+.messageToDisplay{
+    position: relative;
+    top: -1rem;
+    width: 70%;
+    text-align: center;
+}
+
+#run::before{
+    content: '';
+    height: 103%;
+    width: var(--before-width,0);
+    background: green;
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    border-radius: inherit;
+    transition: width 0.5s ease;
+}
+
+#run>p{
+    z-index: 1;
+}
+
+.resultMessage{
+    text-align: center;
+}
+
+.controlpanelbox{
+    position: relative;
+    width: 25%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    flex-direction: column;
+    box-shadow: 0 0 1.5rem black;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.controlPanelContent{
+    position: relative;
+    padding: 0;
+    height: 100%;
+    padding-top: 0;
+}
+
+.stepsBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.resultBox{
+    display: none;
+    padding: 1rem;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 4fr 1fr 1fr;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+}
+
+.resultBox > button{
+    background: linear-gradient(to right, black, red);
+    height: 3rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    border: 0px;
+}
+
+button{
+    cursor: pointer;
+}

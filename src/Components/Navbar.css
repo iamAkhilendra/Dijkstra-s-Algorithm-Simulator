@@ -1,0 +1,66 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+    font-size: 3vh;
+    color: white; 
+    padding: 0 2vw;
+    background: linear-gradient(to right, #000000, #555067, #000000 100%);
+    box-shadow: 0px 3px 7px 5px rgb(0,0,0,0.5);
+    box-sizing: border-box;
+}
+
+.appname{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.applogo{
+    height: 6vh;
+    width: 4vw;
+    margin: 0;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+
+.options li{
+    padding: 0 1vw;
+    position: relative;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options li:hover{
+    cursor: pointer;
+}
+
+.options li:not(:last-child){
+    margin-right: 2vw;
+}
+
+.options li:focus::after {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 100%;
+    background: rgb(16, 203, 255);
+}
+
+
+
+
+
