@@ -1,0 +1,17 @@
+#footer{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    aspect-ratio: 32;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9vw;
+}
+
+#footer a{
+    margin: 0 0.3vw;
+    color: white;
+}

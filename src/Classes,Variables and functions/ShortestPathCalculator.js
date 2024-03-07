@@ -69,7 +69,7 @@ function calculateShortestPath(startNode, endNode, matrixOfNodes, numberOfRows, 
             let y = indexOfNodeWithMinimumDistance[1];
             
             nodeReached[x][y] = 1;
-            let neighbours = [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]];
+            let neighbours = [[x + 1, y], [x, y - 1], [x - 1, y], [x, y + 1]];
 
             for (let i = 0; i < neighbours.length; i++) {
                 let m = neighbours[i][0];
