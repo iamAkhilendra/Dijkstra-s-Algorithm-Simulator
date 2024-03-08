@@ -13,6 +13,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+#logo-link{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
 #navbar svg{
     cursor: pointer;
 }
@@ -43,10 +49,23 @@
 #navbar-options :nth-child(4){
     background: blue;
     border-radius: 10vw;
+}
+
+#navbar-options a{
+    text-decoration: none;
+    color: black;
+}
+
+#navbar-options a:focus{
+    color: blue;
+}
+
+#navbar-options :nth-child(4) a{
     color: white;
 }
 
-#navbar-options :nth-of-type(-n+3):hover{
+
+#navbar-options :nth-of-type(-n+3) a:hover{
     color: rgb(51, 51, 255);
 }
 
