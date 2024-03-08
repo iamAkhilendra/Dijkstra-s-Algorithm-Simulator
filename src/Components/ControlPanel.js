@@ -54,7 +54,7 @@ const ControlPanel = () => {
     }
 
     const renderResult = (distance) =>{
-        if (distance == -1) setResult(`Unable to reach the end point:(`);
+        if (distance == -1) setResult(`Unable to reach the end point :(`);
         else{
             printPath();
             setResult(`Minimum distance from startNode to endNode is ${distance} units`);

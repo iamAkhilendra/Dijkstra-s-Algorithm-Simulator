@@ -1,5 +1,87 @@
+:root {
+    --features-color: rgb(108, 108, 112); /* Define your variable and its value */
+}
+
 #home-page{
     width: 100%;
-    aspect-ratio: 1.5;
-    background: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home-top{
+    width: 80%;
+    aspect-ratio: calc(960/512);
+    background: url('../../Images/Home_top_background.png') center/cover;
+    margin: 2vw 0;
+    border-radius: 2vw;
+    color: white;
+    box-sizing: border-box;
+    padding: 12vw 10vw 2vw;
+    position: relative;
+}
+
+#home-top > h1{
+    font-size: 3.5vw;
+}
+#home-top > p{
+    font-size: 1.5vw;
+}
+
+#home-top-to-simulator{
+    padding: 1vw 2vw;
+    font-size: 1.6vw;
+    background: #1C91F2;
+    color: white;
+    border: 0;
+    border-radius: 10vw;
+    margin: 2vw 0;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: scale 0.03s ease;
+}
+
+#home-top-to-simulator:hover{
+    scale: 1.015;
+}
+
+#home-top :is(h1,p,a){
+    z-index: 3;
+}
+
+#about-the-app{
+    width: 80%;
+    aspect-ratio: 2;
+    margin: 2vw 0;
+    box-sizing: border-box;
+    padding: 2vw 4vw;
+    position: relative;
+}
+
+#about-the-app::before{
+    content: '';
+    width: 0.2vw;
+    aspect-ratio: calc(1/138);
+    background: var(--features-color);
+    position: absolute;
+    top: 8vw;
+    left: 5.04vw;
+    border-radius: 5vw;
+}
+
+#about-the-app-heading{
+    font-size: 2.7vw;
+    font-weight: 900;
+    color:rgb(74, 74, 76)
+}
+
+#about-the-app-points{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8vw;
+}
+
+#about-the-app-points li{
+    font-size: 2.2vw;
+    color: var(--features-color);
 }

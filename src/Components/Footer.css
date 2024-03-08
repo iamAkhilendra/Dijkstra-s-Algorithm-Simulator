@@ -2,16 +2,36 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    aspect-ratio: 32;
-    background: black;
+    aspect-ratio: 20;
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 0.1vw;
     font-size: 0.9vw;
+    box-sizing: border-box;
 }
 
-#footer a{
-    margin: 0 0.3vw;
-    color: white;
+#footer p{
+    margin: 0;
+    padding: 0;
+    color: gray;
+}
+
+#social-icons{
+    width: 15vw;
+    aspect-ratio: 5;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#social-icons svg{
+    fill: rgb(185, 185, 185);
+}
+
+#e-mail{
+    display: inline;
+    color: rgb(64, 64, 255) !important;
 }

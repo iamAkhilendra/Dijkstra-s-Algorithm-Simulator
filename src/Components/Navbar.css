@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 
 #navbar{
     width: 100%;
@@ -10,7 +10,6 @@
     padding-left: 6vw;
     position: relative;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
 }
 
 #logo-link{
@@ -40,7 +39,6 @@
 #navbar-options li{
     padding: 0 2vw;
     height: 4vw;
-    cursor: pointer;
     transition: scale 0.005s ease;
     display: flex;
     align-items: center;
@@ -49,6 +47,7 @@
 #navbar-options :nth-child(4){
     background: blue;
     border-radius: 10vw;
+    cursor: pointer;
 }
 
 #navbar-options a{
