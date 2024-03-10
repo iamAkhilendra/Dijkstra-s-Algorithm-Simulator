@@ -1,5 +1,64 @@
 #documentation{
     width: 100%;
     aspect-ratio: 2;
-    background: purple;
+}
+
+.doc-sections{
+    width: 80%;
+    background: white;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 2vw 1vw;
+}
+
+.doc-sections>h1{
+    font-size: 2.6vw;
+    font-weight: 900;
+    color: rgb(65, 64, 64);
+    margin: 1vw 0;
+}
+
+.doc-sections>p{
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: rgb(123, 123, 123);
+    margin: 0.5vw 0;
+}
+
+#algorithm-snippet{
+    padding: 1vw;
+}
+
+#code-snippet{
+    width: 50vw;
+    aspect-ratio: calc(800/900);
+    background: url('../../Images/AlgorithmSnippet.png') center/cover;  
+    margin: 0vw auto;
+    margin-top: 2vw; 
+    border-radius: 1vw;
+}
+
+#limitations > ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 3vw;
+    font-size: 1.5vw;
+    color: rgb(123, 123, 123);
+    font-weight: 500;
+}
+
+#limitations > ul > li{
+    margin: 1vw 0;
+    position: relative;
+}
+
+#limitations > ul > li::before{
+    content: '';
+    width: 0.6vw;
+    aspect-ratio: 1;
+    border-radius: 2vw;
+    background: rgb(123, 123, 123);
+    position: absolute;
+    top: 0.65vw;
+    left: -1.5vw;
 }
