@@ -19,7 +19,7 @@ export default function Documentation() {
                 <ul>
                     <li>Dijkstra's algorithm assumes that all edge weights in the graph are non-negative. If the graph contains negative weights, the algorithm may produce incorrect results.</li>
                     <li>The algorithm relies on storing and updating distance values for each vertex, which can result in significant memory and processing overhead for large graphs.</li>
-                    <li>The time complexity of Dijkstra's algorithm is O(n &#8226; log(n)), where V is the number of vertices and E is the number of edges. While generally efficient, this complexity may become a limitation for very large graphs.</li>
+                    <li>The time complexity of Dijkstra's algorithm is O(n &#8226; log(n)), where n is the number of vertices or nodes in the graph. While generally efficient, this complexity may become a limitation for very large graphs.</li>
                 </ul>
             </div>
 

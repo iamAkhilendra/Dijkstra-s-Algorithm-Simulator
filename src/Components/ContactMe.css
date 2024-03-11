@@ -1,5 +1,103 @@
 #contact-me{
     width: 100%;
-    aspect-ratio: 1;
-    background: greenyellow;
+    box-sizing: border-box;
+    padding: 2vw;
 }
+
+#contact-me-box{
+    width: 40%;
+    margin: 2vw auto 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#contact-me-box::before{
+    content: '';
+    width: 60vw;
+    aspect-ratio: 2.4;
+    background: blue;
+    position: absolute;
+    top: -2vw;
+    z-index: -2;
+    border-radius: 3vw;
+}
+
+#contact-me-box > form{
+    width: 100%;
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4vw;
+    border: 0.2vw solid black;
+    background: white;
+    box-sizing: border-box;
+    padding: 2vw 0;
+}
+
+#contact-me-box > form > div > input{
+    width: 25vw;
+    aspect-ratio: 6;
+    border-radius: 10vw;
+    margin: 1vw 0vw;
+    border: 0;
+}
+
+#contact-me-form-message{
+    width: 25vw;
+    aspect-ratio: 2;
+    border-radius: 2vw;
+    resize: none;
+}
+
+
+#contact-me-box form > div > :is(:not(#contact-me-submit-button)):focus{
+    outline: none;
+    border: 0.2vw solid blue;
+}
+
+#contact-me-box form > div > :is(:not(#contact-me-submit-button)){
+    border: 0.1vw solid black;
+    box-sizing: border-box;
+    font-size: 1.3vw;
+    padding: 1vw 2vw;
+}
+
+.input-values{
+    position: relative;
+}
+
+.input-values::before{
+    position: absolute;
+    top: 0.45vw;
+    left: 2vw;
+    font-size: 1vw;
+    color: rgb(188, 188, 188);
+    transition: top 0.05s ease;
+    background: white;
+    padding: 0 0.2vw;
+}
+
+.input-values:focus-within::before{
+    color: blue;
+}
+
+#contact-me-user-name-div::before{
+    content: 'Name';
+}
+#contact-me-user-email-div::before{
+    content: 'Email';
+}
+#contact-me-user-phone-number-div::before{
+    content: 'Phone';
+}
+#contact-me-form-message-div::before{
+    content: 'Message';
+    top: -0.5vw;
+}
+
+#contact-me-submit-button{
+    font-size: 1.23vw;
+}
+
