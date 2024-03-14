@@ -65,7 +65,7 @@
     background: var(--features-color);
     position: absolute;
     top: 8vw;
-    left: 5.04vw;
+    left: 4.945vw;
     border-radius: 5vw;
 }
 
@@ -76,12 +76,28 @@
 }
 
 #about-the-app-points{
+    margin: 0 2.5vw;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 1.8vw;
+    list-style: none;
 }
 
 #about-the-app-points li{
     font-size: 2.2vw;
     color: var(--features-color);
+    padding: 0;
+    position: relative;
+}
+
+#about-the-app-points li::before{
+    content: '';
+    width: 1vw;
+    aspect-ratio: 1;
+    background: var(--features-color);
+    position: absolute;
+    border-radius: 10vw;
+    top: 0.9vw;
+    left: -2vw;
 }

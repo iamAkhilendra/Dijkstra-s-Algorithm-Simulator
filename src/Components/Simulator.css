@@ -4,4 +4,16 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 5vw 0;
+    position: relative;
+}
+
+.simulation-box::before{
+    content: '';
+    width: 95vw;
+    aspect-ratio: 4;
+    position: absolute;
+    top: 0;
+    background: blue;
+    margin: 0 2.5vw;
+    border-radius: 1.5vw;
 }

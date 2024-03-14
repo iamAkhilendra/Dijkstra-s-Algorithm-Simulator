@@ -17,18 +17,10 @@ export default function Navbar() {
             </Link>
             
             <ul id="navbar-options">
-                <li>
-                    <Link tabIndex={0} to="/">Home</Link>
-                </li>
-                <li>
-                    <Link tabIndex={0} to="/simulator">Simulator</Link>
-                </li>
-                <li>
-                    <Link tabIndex={0} to="/documentation">Documentation</Link>
-                </li>
-                <li>
-                    <Link tabIndex={0} to="/contact-me">Contant Me</Link>
-                </li>
+                <Link tabIndex={0} to="/"><li>Home</li></Link>
+                <Link tabIndex={0} to="/simulator"><li>Simulator</li></Link>
+                <Link tabIndex={0} to="/documentation"><li>Documentation</li></Link>
+                <Link tabIndex={0} to="/contact-me"><li>Contant Me</li></Link>
             </ul>
         </div>
     )
