@@ -1,103 +1,127 @@
+
+:root{
+    --contact-me-template-color: rgb(46, 46, 255);
+}
+
 #contact-me{
     width: 100%;
     box-sizing: border-box;
     padding: 2vw;
-}
-
-#contact-me-box{
-    width: 40%;
-    margin: 2vw auto 4vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
+    margin: 2vw 0;
 }
 
-#contact-me-box::before{
+#contact-me::before{
     content: '';
-    width: 60vw;
-    aspect-ratio: 2.4;
-    background: blue;
+    width: 70vw;
+    aspect-ratio: 3;
+    background: rgb(46, 46, 255);
     position: absolute;
-    top: -2vw;
+    top: -1vw;
+    left: 15vw;
     z-index: -2;
     border-radius: 3vw;
 }
 
-#contact-me-box > form{
-    width: 100%;
-    display: inherit;
+#contact-me::after{
+    content: '';
+    width:34vw;
+    aspect-ratio: 1.5;
+    background: white;
+    position: absolute;
+    top: 2vw;
+    left: 32.45vw;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    z-index: -2;
+}
+
+#contact-me form{
+    width: 30vw;
+    padding: 2vw;
+    margin: 0 auto;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 4vw;
     border: 0.2vw solid black;
-    background: white;
-    box-sizing: border-box;
-    padding: 2vw 0;
+    border-radius: 3vw;
 }
 
-#contact-me-box > form > div > input{
-    width: 25vw;
-    aspect-ratio: 6;
-    border-radius: 10vw;
-    margin: 1vw 0vw;
-    border: 0;
-}
-
-#contact-me-form-message{
-    width: 25vw;
-    aspect-ratio: 2;
-    border-radius: 2vw;
-    resize: none;
-}
-
-
-#contact-me-box form > div > :is(:not(#contact-me-submit-button)):focus{
-    outline: none;
-    border: 0.2vw solid blue;
-}
-
-#contact-me-box form > div > :is(:not(#contact-me-submit-button)){
-    border: 0.1vw solid black;
-    box-sizing: border-box;
-    font-size: 1.3vw;
-    padding: 1vw 2vw;
-}
-
-.input-values{
+.input-field{
+    padding: 0;
+    margin: 0;
     position: relative;
 }
 
-.input-values::before{
+.input-field :is(input,textarea){
+    width: 25vw;
+    aspect-ratio: 7;
+    margin: 1vw 0;
+    border-radius: 2.5vw;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    position: relative;
+    background: transparent;
+    padding: 0 1.8vw;
+    font-size: 1.3vw;
+    outline: 0;
+}
+
+#contact-me-message{
+    aspect-ratio: 2.5;
+    resize: none;
+    padding: 1vw 1.8vw;
+}
+
+#contact-me-message::-webkit-scrollbar{
+    display: none;
+}
+
+.input-field label{
     position: absolute;
-    top: 0.45vw;
     left: 2vw;
-    font-size: 1vw;
-    color: rgb(188, 188, 188);
-    transition: top 0.05s ease;
+    top: 2vw;
+    font-size: 1.4vw;
+    color: gray;
+    transition: top 0.1s ease;
+    z-index: -1;
+}
+
+.input-field :is(input,textarea):focus{
+    border: 0.2vw solid var(--contact-me-template-color);
+}
+
+.input-field :is(input,textarea):focus ~ label{
+    font-size: 1.1vw;
+    top: 0.3vw;
     background: white;
     padding: 0 0.2vw;
+    color: var(--contact-me-template-color);
+    z-index: 1;
 }
 
-.input-values:focus-within::before{
-    color: blue;
-}
-
-#contact-me-user-name-div::before{
-    content: 'Name';
-}
-#contact-me-user-email-div::before{
-    content: 'Email';
-}
-#contact-me-user-phone-number-div::before{
-    content: 'Phone';
-}
-#contact-me-form-message-div::before{
-    content: 'Message';
-    top: -0.5vw;
+.input-field :is(input,textarea):not(:focus):not(:placeholder-shown) ~ label{
+    color: gray;
+    font-size: 1.1vw;
+    top: 0.3vw;
+    background: white;
+    padding: 0 0.2vw;
+    z-index: 1;
 }
 
 #contact-me-submit-button{
-    font-size: 1.23vw;
+    width: 25vw;
+    aspect-ratio: 7;
+    color: white;
+    margin: 1vw 0;
+    border-radius: 2.5vw;
+    box-sizing: border-box;
+    font-size: 1.3vw;
+    font-weight: 700;
+    border: 0;
+    background: linear-gradient(to right, #5d8dfd, #1ca1ff);
 }
 
+.input-field input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
