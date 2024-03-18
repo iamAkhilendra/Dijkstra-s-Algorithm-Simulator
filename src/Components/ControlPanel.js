@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import calculateShortestPath from "../Classes,Variables and functions/ShortestPathCalculator";
 import printPath from '../Classes,Variables and functions/PrintPath';
 import './ControlPanel.css';
@@ -17,6 +17,15 @@ import {toggleStates,
 
 
 const ControlPanel = () => {
+
+    useEffect(() => {
+        clearEverything();
+        toggleStates(0);
+        setMessageToDisplay(stringArray[0]);
+        setStepNumber(1);
+        document.getElementById("rightnavigationbutton").style.display = 'flex';
+        document.getElementById("leftnavigationbutton").style.display = 'none';
+    },[]);
             
     const [result, setResult] = useState("Have not calculated the result yet");
     const [stepNumber, setStepNumber] = useState(1);

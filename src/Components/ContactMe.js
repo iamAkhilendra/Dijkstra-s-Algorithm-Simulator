@@ -47,6 +47,7 @@ export default function ContactMe() {
             },
           );
           e.target.reset();
+          setValue("");
       };
 
     return (
