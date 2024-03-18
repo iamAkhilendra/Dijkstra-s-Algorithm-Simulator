@@ -1,3 +1,7 @@
+:root {
+    --instructions-color: rgb(108, 108, 112);
+}
+
 .simulation-box{
     width: 100%;
     display: flex;
@@ -17,3 +21,50 @@
     margin: 0 2.5vw;
     border-radius: 1.5vw;
 }
+
+
+#use-instructions{
+    width: 80%;
+    margin: 1vw auto 5vw;
+    color: var(--instructions-color);
+}
+
+#use-instructions h1{
+    font-size: 3.3vw;
+}
+
+#use-instructions ul{
+    list-style: none;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+    width: 95%;
+    position: relative;
+    left: 5%;
+}
+
+#use-instructions ul li{
+    margin: 1.5vw 0;
+    position: relative;
+}
+
+#use-instructions ul li::before{
+    content: '1)';
+    position: absolute;
+    left: -2.6vw;
+    margin: 0;
+}
+
+#use-instructions ul li:nth-child(2)::before{
+    content: '2)' !important;
+}
+#use-instructions ul li:nth-child(3)::before{
+    content: '3)' !important;
+}
+#use-instructions ul li:nth-child(4)::before{
+    content: '4)' !important;
+}
+#use-instructions ul li:nth-child(5)::before{
+    content: '5)' !important;
+}
+

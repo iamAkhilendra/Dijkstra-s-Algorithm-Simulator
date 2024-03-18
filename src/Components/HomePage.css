@@ -1,5 +1,5 @@
 :root {
-    --features-color: rgb(108, 108, 112); /* Define your variable and its value */
+    --features-color: rgb(108, 108, 112);
 }
 
 #home-page{
@@ -65,7 +65,7 @@
     background: var(--features-color);
     position: absolute;
     top: 8vw;
-    left: 4.945vw;
+    left: 4.882vw;
     border-radius: 5vw;
 }
 

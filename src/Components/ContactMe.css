@@ -9,6 +9,9 @@
     padding: 2vw;
     position: relative;
     margin: 2vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #contact-me::before{
@@ -25,9 +28,8 @@
 
 #contact-me::after{
     content: '';
-    width:34vw;
+    width: 34vw;
     aspect-ratio: 1.5;
-    background: white;
     position: absolute;
     top: 2vw;
     left: 32.45vw;
@@ -45,6 +47,8 @@
     align-items: center;
     border: 0.2vw solid black;
     border-radius: 3vw;
+    background: white;
+    z-index: 2;
 }
 
 .input-field{
@@ -65,6 +69,7 @@
     padding: 0 1.8vw;
     font-size: 1.3vw;
     outline: 0;
+    z-index: 4;
 }
 
 #contact-me-message{
@@ -84,7 +89,7 @@
     font-size: 1.4vw;
     color: gray;
     transition: top 0.1s ease;
-    z-index: -1;
+    z-index: 3;
 }
 
 .input-field :is(input,textarea):focus{
@@ -97,7 +102,7 @@
     background: white;
     padding: 0 0.2vw;
     color: var(--contact-me-template-color);
-    z-index: 1;
+    z-index: 4;
 }
 
 .input-field :is(input,textarea):not(:focus):not(:placeholder-shown) ~ label{
@@ -106,7 +111,7 @@
     top: 0.3vw;
     background: white;
     padding: 0 0.2vw;
-    z-index: 1;
+    z-index: 4;
 }
 
 #contact-me-submit-button{
@@ -122,6 +127,39 @@
     background: linear-gradient(to right, #5d8dfd, #1ca1ff);
 }
 
-.input-field input[type=number]::-webkit-inner-spin-button{
+#contact-me-number-input::-webkit-inner-spin-button{
     -webkit-appearance: none;
+}
+
+.contact-me-submit-message{
+    display: none;
+    padding: 2vw;
+    font-size: 1.4vw;
+    font-weight: 500;
+    border-radius: 1vw;
+    position: fixed;
+    top: 5vw;
+    right: 3vw;
+    animation: anim 0.1s linear forwards;
+}
+
+#success{
+    background: rgb(181, 230, 181);
+    color: green;
+    border: 0.15vw solid green;
+}
+
+#failure{
+    background: rgb(253, 192, 192);
+    color: red;
+    border: 0.15vw solid red;
+}
+
+@keyframes anim {
+    0%{
+        right: 0vw;
+    }
+    100%{
+        right: 3vw;
+    }
 }

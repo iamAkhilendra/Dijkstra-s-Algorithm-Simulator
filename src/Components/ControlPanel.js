@@ -62,6 +62,8 @@ const ControlPanel = () => {
 
         document.getElementById('stepsBox').style.display = 'none';
         document.getElementById('resultBox').style.display = 'grid';
+        document.getElementById("leftnavigationbutton").style.display = 'none';
+        document.getElementById("rightnavigationbutton").style.display = 'none';
     }
 
 
