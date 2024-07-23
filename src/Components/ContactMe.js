@@ -6,11 +6,13 @@ export default function ContactMe() {
 
     const [value, setValue] = useState('');
 
+    // Removes non digit values from the phone number.
     const handleChange = (event) => {
         const newValue = event.target.value.replace(/[^0-9]/g, '');
         setValue(newValue);
     };
 
+    // Displays success message upon email being successfully sent.
     const successExecutable = () => {
         const successElement = document.getElementById("success");
         successElement.style.display = 'inline-block';
@@ -20,6 +22,7 @@ export default function ContactMe() {
         }, 3000);
     }
 
+    // Displays faliure message if email is not set due to any issue.
     const failureExecutable = () => {
       const successElement = document.getElementById("failure");
       successElement.style.display = 'inline-block';
@@ -31,6 +34,7 @@ export default function ContactMe() {
 
     const form = useRef();
 
+    // Sends email to given email id.
     const sendEmail = (e) => {
         e.preventDefault();
     

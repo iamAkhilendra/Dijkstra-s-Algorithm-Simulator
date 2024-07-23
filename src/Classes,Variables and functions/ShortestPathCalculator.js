@@ -1,14 +1,14 @@
-import printPath from './PrintPath';
 import minHeap from './MinHeapClass';
 import {numberOfRows, numberOfColumns} from './VariablesAndFunctions';
 
-
+// Converts child number into corresponding grid index.
 function childNumberToIndex(childNumber){
     let x = Math.floor((childNumber-1) / numberOfColumns);
     let y = (childNumber - 1) % numberOfColumns;
     return [x, y];
 }
 
+// Converts grid index to child number
 function indexToChildNumber(index){
     return (numberOfColumns * index[0]) + index[1] + 1;
 }
@@ -19,16 +19,19 @@ function calculateShortestPath(startNode, endNode, matrixOfNodes, numberOfRows, 
 
     let maximumPossibleDistance = numberOfRows * numberOfColumns + 3;
 
+    // Setting distance of all nodes from start-node Infinity (in this case we have taken a big number which is out of possible distances range).
     for (let i = 0; i < numberOfRows; i++) {
       for (let j = 0; j < numberOfColumns; j++) {
           if (matrixOfNodes[i][j] != -1) matrixOfNodes[i][j] = maximumPossibleDistance;
       }
     }
 
+    // Cheacks whether index of a cell is valid for the grid or not.
     function isInsideTheDomain(a,b) {
         return (a >= 0 && a < numberOfRows && b >= 0 && b < numberOfColumns);
     }
 
+    // Changes color of grid cells.
     function changeColor(index, distance){
       let myPromiseToChangeColor = new Promise((resolve, reject) => {
           setTimeout(() => {
@@ -40,6 +43,7 @@ function calculateShortestPath(startNode, endNode, matrixOfNodes, numberOfRows, 
       promisesArray.push(myPromiseToChangeColor);
     }
 
+    // Calculates shortest path from start-node to end-node
     function runForShortestPath(matrixOfNodes, previousNode, nodeReached, startNode, endNode) {
       
 
@@ -78,6 +82,7 @@ function calculateShortestPath(startNode, endNode, matrixOfNodes, numberOfRows, 
                     if (nodeReached[m][n] == 1) continue;
                     if (matrixOfNodes[m][n] > matrixOfNodes[x][y] + 1) {
                         if (matrixOfNodes[m][n] == maximumPossibleDistance) myMinHeap.insert([matrixOfNodes[x][y] + 1, indexToChildNumber([m,n])]);
+                        else myMinHeap.adjust( indexToChildNumber([m,n]), matrixOfNodes[x][y] + 1 );
                         matrixOfNodes[m][n] = matrixOfNodes[x][y] + 1;
                         previousNode[m][n] = Math.abs(x - m) * Math.floor(2 - (x - m)) + Math.abs(y - n) * Math.floor(3 + (y - n));
                     }

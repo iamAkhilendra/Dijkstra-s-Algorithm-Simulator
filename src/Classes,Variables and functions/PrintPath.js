@@ -1,5 +1,8 @@
 import {startNode, endNode, previousNode, numberOfColumns} from './VariablesAndFunctions';
 
+
+// Once the shortest path between start-node and end-node is calculate, we have to render the obtained shortest path between these two nodes.
+// Following function randers the shortest path between start and end node with green color.
 function printPath(){
     var x = endNode[0];
     var y = endNode[1];

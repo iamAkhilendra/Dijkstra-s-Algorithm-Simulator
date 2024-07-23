@@ -18,6 +18,7 @@ import {toggleStates,
 
 const ControlPanel = () => {
 
+    // Sets everything to default in simulator.
     useEffect(() => {
         clearEverything();
         toggleStates(0);
@@ -38,6 +39,10 @@ const ControlPanel = () => {
 
     const [messageToDisplay, setMessageToDisplay] = useState(firstStepString);
 
+    // Moves the state backwards.
+    // state: 1 => Creating walls.
+    // State: 2 => Creating start point.
+    // State: 3 => Creating end point.
     const moveBackward = () => {
         if(stepNumber == 3){
             document.getElementById("rightnavigationbutton").style.display = 'flex';
@@ -50,6 +55,7 @@ const ControlPanel = () => {
         setStepNumber(stepNumber - 1);
     }
 
+    // Moves the state one step forward.
     const moveForward = () => {
         if(stepNumber == 2){
             document.getElementById("rightnavigationbutton").style.display = 'none';
@@ -62,6 +68,7 @@ const ControlPanel = () => {
         setStepNumber(stepNumber + 1);
     }
 
+    // Renders result in the control panel after the path finding algorithm has been executed.
     const renderResult = (distance) =>{
         if (distance == -1) setResult(`Unable to reach the end point :(`);
         else{
@@ -75,7 +82,7 @@ const ControlPanel = () => {
         document.getElementById("rightnavigationbutton").style.display = 'none';
     }
 
-
+    // Runs the path finding algorithm.
     const runer = () =>{
         if(startPointHasBeenCreated && endPointHasBeenCreated){
             const minimumDistancePromise = calculateShortestPath(startNode, endNode, matrixOfNodes, numberOfRows, numberOfColumns, previousNode, nodeReached);
@@ -99,6 +106,7 @@ const ControlPanel = () => {
         }
     }
 
+    // Clears everything from the grid and sets everything to default.
     const clearAll = () => {
         clearEverything();
         toggleStates(0);
@@ -108,6 +116,7 @@ const ControlPanel = () => {
         document.getElementById("leftnavigationbutton").style.display = 'none';
     }
 
+    // Clears everything except walls.
     const playAgain = () => {
         clearExceptWalls();
         toggleStates(1);

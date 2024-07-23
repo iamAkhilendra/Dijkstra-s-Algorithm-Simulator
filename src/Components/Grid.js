@@ -6,6 +6,9 @@ import {numberOfRows,
 
 
 export default function Grid() {
+
+    // Grid has multiple childs representing nodes.
+    // Following code appends these child in the parent grid.
     useEffect(()=>{
         const gridContainer = document.getElementById("grid");
         gridContainer.style.gridTemplateColumns = `repeat(${numberOfColumns},1fr)`;

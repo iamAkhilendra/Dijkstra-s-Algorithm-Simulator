@@ -5,6 +5,9 @@ var numberOfColumns = 20;
 var startNode = [-1,-1];
 var endNode = [-1,-1];
 
+// There are different states of the grid.
+// User could be at state where he/she could be making walls, or start node, or end node in the grid.
+// following class tracks at which state user is current at.
 class state {
     constructor(stepNumber, maxQuantity, color, currNum, notification, mark) {
         this.stepNumber = stepNumber;
@@ -34,8 +37,14 @@ function toggleStates(num){
     currstate = states[num];
 }
 
+// Matrix of node stores -1 for cells where is wall and 0 where there is no wall.
 var matrixOfNodes = [];
+
+// While calculating shortest path between two nodes, we need to store the previous node for each node.
+// Following 2D matrix stores previous node for each node.
 var previousNode = [];
+
+// Stores 1 if the shortest distance from start-node to any node is found, otherwise 0.
 var nodeReached = [];
 
 for (let i = 0; i < numberOfRows; i++){
@@ -55,6 +64,7 @@ for (let i = 0; i < numberOfRows; i++){
 var startPointHasBeenCreated = false;
 var endPointHasBeenCreated = false;
 
+// Creates walls in the grid.
 function handleWalls(event, i, j){
     if (event.target.style.backgroundColor == creatingWalls.color){
         if(matrixOfNodes[i][j] == creatingWalls.mark) matrixOfNodes[i][j] = 0;
@@ -77,6 +87,7 @@ function handleWalls(event, i, j){
     } 
 }
 
+// Creates Start point in the grid.
 function handleStart(event, i, j){
     if (event.target.style.backgroundColor == creatingStartingPoint.color){
         matrixOfNodes[i][j] = 0;
@@ -107,7 +118,7 @@ function handleStart(event, i, j){
     }      
 }
 
-
+// Creates End point in the grid.
 function handleEnd(event, i, j){
     if (event.target.style.backgroundColor == creatingEndingPoints.color){
         matrixOfNodes[i][j] = 0;
@@ -138,6 +149,7 @@ function handleEnd(event, i, j){
     }      
 }
 
+// If user presses mouse button and hovers over the grid, following function handles that and creates walls, starting point or ending point in the grid depending upon current state.
 function handleHover(event, index) {
     const i = Math.floor(index/numberOfColumns);
     const j = index%numberOfColumns;
@@ -148,6 +160,7 @@ function handleHover(event, index) {
     }
 }
 
+// Clears everything from the grid (walls, start-point, end-point).
 function clearEverything(){
     for (let i = 0; i < numberOfRows; i++){
         for (let j = 0; j < numberOfColumns; j++){
@@ -169,6 +182,7 @@ function clearEverything(){
     }
 }
 
+// Clears everything except walls in the grid.
 function clearExceptWalls(){
     for (let i = 0; i < numberOfRows; i++){
         for (let j = 0; j < numberOfColumns; j++){
